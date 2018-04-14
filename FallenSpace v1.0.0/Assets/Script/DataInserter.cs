@@ -1,27 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class DataInserter : MonoBehaviour {
 
-	public string inputUserName;
-	public string inputPassword;
-	public string inputEmail;
+
+	public InputField TextUsername;
+	public InputField TextPassword;
+	public InputField TextEmail;
+	public Button Register;
+
+	string inputUserName;
+	string inputPassword;
+	string inputEmail;
+
+
+
 
 	string createUserURL = "http://www.bunlab.net/sharp/game/InsertUser.php";
 
-	// Use this for initialization
+
 	void Start () {
-	
+		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+
+		inputUserName = TextUsername.text;
+		inputPassword = TextPassword.text;
+		inputEmail = TextEmail.text;
+			
+		if (Input.GetKeyDown (KeyCode.Return)) { //กด space bar
 			CreateUser (inputUserName, inputPassword, inputEmail);
 			print ("Send Data Okay");
 		}
 				
+	}
+
+	void TaskOnClick() // คลิกปุ่ม
+	{
+		if (TextUsername.text == "" && TextEmail.text == "" && TextPassword.text == "") {
+			print ("NO NO NO");
+		} else {
+			Debug.Log ("clicked the button");
+			CreateUser (inputUserName, inputPassword, inputEmail);
+			print ("Send Data Okay");
+		}
 	}
 
 	public void CreateUser(string username, string password, string email){
