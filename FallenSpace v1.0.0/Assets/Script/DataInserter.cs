@@ -8,7 +8,7 @@ public class DataInserter : MonoBehaviour {
 	public string inputPassword;
 	public string inputEmail;
 
-	string createUserURL = "http://localhost/InsertUser.php";
+	string createUserURL = "http://www.bunlab.net/sharp/game/InsertUser.php";
 
 	// Use this for initialization
 	void Start () {
