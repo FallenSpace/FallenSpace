@@ -44,17 +44,16 @@ public class LoginCheck : MonoBehaviour {
 			print ("NO NO NO");
 		} else {
 			Debug.Log ("clicked the button");
-			CreateUser (inputUserName, inputPassword, inputEmail);
+			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
 		}
 	}
 
-	public void CreateUser(string username, string password, string email){
+	public void CreateUser(string username, string password){
 
 		WWWForm form = new WWWForm();
 		form.AddField("usernamePost", username);
 		form.AddField("passwordPost", password);
-		form.AddField("emailPost", email);
 
 		WWW www = new WWW(createUserURL, form);
 
