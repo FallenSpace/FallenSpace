@@ -32,3 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyLevel.unity
     guid: 15167821f00d6454cb258e39f11c77dd
+  - enabled: 1
+    path: Assets/kiwZaaaa.unity
+    guid: 203762cbb277948dfa4d23e123f8410b
+  - enabled: 1
+    path: Assets/.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/ghgh.unity
+    guid: 066e10be8066f489aab04e09e8fd1bfa

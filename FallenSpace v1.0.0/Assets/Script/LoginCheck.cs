@@ -2,15 +2,13 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using Facebook.MiniJSON;
 
-public class DataInserter : MonoBehaviour {
+public class LoginCheck : MonoBehaviour {
 
 
 	public InputField TextUsername;
 	public InputField TextPassword;
-	public InputField TextEmail;
-	public Button Register;
+	public Button Login_btn;
 
 	string inputUserName;
 	string inputPassword;
@@ -32,10 +30,9 @@ public class DataInserter : MonoBehaviour {
 
 		inputUserName = TextUsername.text;
 		inputPassword = TextPassword.text;
-		inputEmail = TextEmail.text;
 			
 		if (Input.GetKeyDown (KeyCode.Return)) { //กด space bar
-			CreateUser (inputUserName, inputPassword, inputEmail);
+			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
 		}
 				
@@ -43,7 +40,7 @@ public class DataInserter : MonoBehaviour {
 
 	void TaskOnClick() // คลิกปุ่ม
 	{
-		if (TextUsername.text == "" && TextEmail.text == "" && TextPassword.text == "") {
+		if (TextUsername.text == "" && TextPassword.text == "") {
 			print ("NO NO NO");
 		} else {
 			Debug.Log ("clicked the button");

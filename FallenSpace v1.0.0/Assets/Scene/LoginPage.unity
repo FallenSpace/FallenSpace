@@ -544,12 +544,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271008844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc7b445efe2b4276b2ea80bba1f05d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 60262ffee3fba453788feab880acc78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputUserName: 
-  inputPassword: 
-  inputEmail: 
+  TextUsername: {fileID: 1496636666}
+  TextPassword: {fileID: 1437368134}
+  Login_btn: {fileID: 217703202}
 --- !u!1 &1329153696
 GameObject:
   m_ObjectHideFlags: 0
