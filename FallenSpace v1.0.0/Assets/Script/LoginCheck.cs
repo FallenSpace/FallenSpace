@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class LoginCheck : MonoBehaviour {
 
-
 	public InputField TextUsername;
 	public InputField TextPassword;
 	public Button Login_btn;
@@ -14,10 +13,11 @@ public class LoginCheck : MonoBehaviour {
 	string inputPassword;
 	string inputEmail;
 
+	public string MenuText = "";
+	public Text Text_get;
 
 
-
-	string createUserURL = "http://www.bunlab.net/sharp/game/InsertUser.php";
+	string createUserURL = "http://www.bunlab.net/sharp/game/CheckLogin.php";
 
 
 	void Start () {
@@ -34,11 +34,13 @@ public class LoginCheck : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Return)) { //กด space bar
 			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
+
 		}
+			
 				
 	}
 
-	void TaskOnClick() // คลิกปุ่ม
+	public void TaskOnClick() // คลิกปุ่ม
 	{
 		if (TextUsername.text == "" && TextPassword.text == "") {
 			print ("NO NO NO");
@@ -46,6 +48,9 @@ public class LoginCheck : MonoBehaviour {
 			Debug.Log ("clicked the button");
 			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
+			print (MenuText);
+
+			Text_get.text = MenuText;
 		}
 	}
 
@@ -56,29 +61,26 @@ public class LoginCheck : MonoBehaviour {
 		form.AddField("passwordPost", password);
 
 		WWW www = new WWW(createUserURL, form);
-
+		StartCoroutine(Login(www));
 	}
 
-	//IEnumerator Start () {
+	private IEnumerator Login(WWW _w) {
+		yield return _w;
+		if(_w.error == null){
+			if(_w.text == "Log in successful!"){
+				//What happens to the player when he logs in:
+			}else {
+				MenuText = _w.text;
+			}
+		}else {
+			MenuText = "Error" + _w.error;
+		}
+	}
 
-	//	WWWForm form = new WWWForm();
 
 
-	//	form.AddField("usernamePost", "usernameUnity");
-	//	form.AddField("passwordPost", "inputpassword");
-	//	form.AddField("emailPost", "inputemail");
 
-	//	var download = UnityWebRequest.Post("http://localhost/InsertUser.php", form);
 
-		// Wait until the download is done
-	//	yield return download.SendWebRequest();
 
-	//	if (download.isNetworkError || download.isHttpError) {
-	//		print( "Error downloading: " + download.error );
-	//	} else {
-			// show the highscores
-	//		Debug.Log(download.downloadHandler.text);
-	//	}
-	//}
 
 }
