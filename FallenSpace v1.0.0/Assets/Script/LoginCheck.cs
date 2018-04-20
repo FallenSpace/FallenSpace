@@ -32,7 +32,7 @@ public class LoginCheck : MonoBehaviour {
 		inputPassword = TextPassword.text;
 			
 		if (Input.GetKeyDown (KeyCode.Return)) { //กด space bar
-			CreateUser (inputUserName, inputPassword, inputEmail);
+			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
 		}
 				
