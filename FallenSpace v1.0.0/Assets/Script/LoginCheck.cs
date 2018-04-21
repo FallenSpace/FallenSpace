@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoginCheck : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class LoginCheck : MonoBehaviour {
 	string inputPassword;
 	string inputEmail;
 
-	public string MenuText = "";
+	string MenuText = "";
 	public Text Text_get;
 
 
@@ -48,10 +49,21 @@ public class LoginCheck : MonoBehaviour {
 			Debug.Log ("clicked the button");
 			CreateUser (inputUserName, inputPassword);
 			print ("Send Data Okay");
-			print (MenuText);
 
-			Text_get.text = MenuText;
+			StartCoroutine(Example());
+
+
+			//Text_get.text = MenuText;
+			SceneManager.LoadScene ("LoginOutput");
 		}
+	}
+
+	IEnumerator Example()
+	{
+		print(Time.time);
+		yield return new WaitForSeconds(2);
+		print(Time.time);
+		print (MenuText);
 	}
 
 	public void CreateUser(string username, string password){
@@ -75,6 +87,7 @@ public class LoginCheck : MonoBehaviour {
 		}else {
 			MenuText = "Error" + _w.error;
 		}
+		PlayerPrefs.SetString ("user_name", MenuText); //ส่งค่า
 	}
 
 
