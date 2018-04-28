@@ -54,7 +54,6 @@ public class LoginCheck : MonoBehaviour {
 
 
 			//Text_get.text = MenuText;
-			SceneManager.LoadScene ("LoginOutput");
 		}
 	}
 
@@ -88,6 +87,8 @@ public class LoginCheck : MonoBehaviour {
 			MenuText = "Error" + _w.error;
 		}
 		PlayerPrefs.SetString ("user_name", MenuText); //ส่งค่า
+		print(MenuText);
+		SceneManager.LoadScene ("LoginOutput"); //เปลี่ยนซีน
 	}
 
 

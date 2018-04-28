@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using Facebook.MiniJSON;
+using UnityEngine.SceneManagement;
 
 public class DataInserter : MonoBehaviour {
 
@@ -49,6 +50,7 @@ public class DataInserter : MonoBehaviour {
 			Debug.Log ("clicked the button");
 			CreateUser (inputUserName, inputPassword, inputEmail);
 			print ("Send Data Okay");
+			SceneManager.LoadScene ("Main");
 		}
 	}
 
