@@ -88,7 +88,7 @@ public class LoginCheck : MonoBehaviour {
 		}
 		PlayerPrefs.SetString ("user_name", MenuText); //ส่งค่า
 		print(MenuText);
-		SceneManager.LoadScene ("LoginOutput"); //เปลี่ยนซีน
+		SceneManager.LoadScene ("Play"); //เปลี่ยนซีน
 	}
 
 
