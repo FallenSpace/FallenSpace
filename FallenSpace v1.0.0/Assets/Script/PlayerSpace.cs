@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Player : MonoBehaviour {
+public class PlayerSpace : MonoBehaviour {
 
 	private Rigidbody2D myRigidbody;
 	private Animator myAnimator;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 	private float jumpForce;
 	// Use this for initialization
 	void Start () {
-		
+
 		facingRight = true;
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		myAnimator = GetComponent<Animator> ();
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
 	void Update(){
 		HandleInput ();
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
