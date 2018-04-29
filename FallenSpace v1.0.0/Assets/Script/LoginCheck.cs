@@ -87,8 +87,12 @@ public class LoginCheck : MonoBehaviour {
 			MenuText = "Error" + _w.error;
 		}
 		PlayerPrefs.SetString ("user_name", MenuText); //ส่งค่า
-		print(MenuText);
-		SceneManager.LoadScene ("Play"); //เปลี่ยนซีน
+		print("LOGINCHECK"+MenuText);
+		if (MenuText == "Username and Password Incorrect!") { //ถ้าพาสผิด
+			Text_get.text = MenuText;
+		} else {
+			SceneManager.LoadScene ("Play"); //เปลี่ยนซีน
+		}
 	}
 
 

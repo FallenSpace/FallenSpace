@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void TaskOnClickRegister () {
-		SceneManager.LoadScene ("RegsiterPage");
+		SceneManager.LoadScene ("RegisterPage");
 	}
 
 	public void TaskOnClickLogin () {
@@ -34,6 +34,10 @@ public class Menu : MonoBehaviour {
 
 	public void TaskOnClickState1 () {
 		SceneManager.LoadScene ("map1");
+	}
+
+	public void TaskOnClickToMenu () {
+		SceneManager.LoadScene ("Main");
 	}
 
 }
