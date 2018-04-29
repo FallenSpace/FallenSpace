@@ -115,7 +115,11 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &97358707
+=======
+--- !u!1 &886256836
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
 --- !u!1 &886256836
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -130,6 +134,7 @@ GameObject:
   m_Component:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 97358708}
   m_Layer: 0
   m_Name: Groundpoint
@@ -137,11 +142,14 @@ GameObject:
 =======
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
+=======
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
   - component: {fileID: 886256838}
   - component: {fileID: 886256837}
   m_Layer: 0
   m_Name: Background
   m_TagString: Ground
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
   m_Icon: {fileID: 0}
@@ -203,13 +211,18 @@ GameObject:
   m_TagString: Untagged
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
+=======
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &562114063
 =======
+=======
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 --- !u!61 &886256837
@@ -239,6 +252,9 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!4 &886256838
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
+=======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -246,6 +262,7 @@ Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 562114062}
@@ -256,6 +273,8 @@ Transform:
   m_Father: {fileID: 992644545}
   m_RootOrder: 2
 =======
+=======
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
   m_GameObject: {fileID: 886256836}
@@ -269,6 +288,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
+=======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -408,7 +430,11 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 0
+=======
+  m_RootOrder: 1
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_RootOrder: 1
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -430,7 +456,11 @@ BoxCollider2D:
   m_UsedByComposite: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Offset: {x: -0.25080323, y: 0.14597178}
+=======
+  m_Offset: {x: 0, y: 0}
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_Offset: {x: 0, y: 0}
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -449,7 +479,11 @@ BoxCollider2D:
   serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 4.3390713, y: 9.708056}
+=======
+  m_Size: {x: 2.95, y: 9.17}
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_Size: {x: 2.95, y: 9.17}
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -508,7 +542,11 @@ SpriteRenderer:
   m_SortingLayer: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SortingOrder: -10
+=======
+  m_SortingOrder: -1
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_SortingOrder: -1
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -534,6 +572,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 17.3, y: 1.5999999, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
@@ -543,6 +582,11 @@ Transform:
   m_LocalPosition: {x: 19.171257, y: 4.6238513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
+=======
+  m_LocalPosition: {x: 19.171257, y: 4.6238513, z: 0}
+  m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
+  m_Children: []
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_LocalPosition: {x: 19.171257, y: 4.6238513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
@@ -684,7 +728,11 @@ SpriteRenderer:
   m_SortingLayer: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SortingOrder: -10
+=======
+  m_SortingOrder: -1
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_SortingOrder: -1
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -710,6 +758,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.009999998, y: 1.5999999, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
@@ -719,6 +768,11 @@ Transform:
   m_LocalPosition: {x: 1.8612585, y: 4.6238513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
+=======
+  m_LocalPosition: {x: 1.8612585, y: 4.6238513, z: 0}
+  m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
+  m_Children: []
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_LocalPosition: {x: 1.8612585, y: 4.6238513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
@@ -779,7 +833,11 @@ SpriteRenderer:
   m_SortingLayer: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SortingOrder: -10
+=======
+  m_SortingOrder: -1
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_SortingOrder: -1
 >>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
@@ -805,6 +863,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -17.58, y: 1.5799999, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
@@ -814,6 +873,11 @@ Transform:
   m_LocalPosition: {x: -15.708741, y: 4.6038513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
   m_Children: []
+=======
+  m_LocalPosition: {x: -15.708741, y: 4.6038513, z: 0}
+  m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
+  m_Children: []
+>>>>>>> cb2e7022f78665d2b6fcf4b58c8b4e7849ef5a2a
 =======
   m_LocalPosition: {x: -15.708741, y: 4.6038513, z: 0}
   m_LocalScale: {x: 0.88881177, y: 0.8916713, z: 0.8916713}
