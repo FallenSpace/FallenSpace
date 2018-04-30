@@ -5,13 +5,24 @@ using UnityEngine;
 
 public class PlayerSpace : MonoBehaviour {
 
-	private Rigidbody2D myRigidbody;
-	private Animator myAnimator;
+    private static PlayerSpace instance;
+    public static PlayerSpace Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<PlayerSpace>();
+            }
+            return instance;
+        }
+    }
+
+    private Animator myAnimator;
 
 	[SerializeField]
 	private float movementSpeed;
 	private bool facingRight;
-	private bool attack;
 
 	[SerializeField]
 	private Transform[] groundPoints;
@@ -19,16 +30,19 @@ public class PlayerSpace : MonoBehaviour {
 
 	private LayerMask whatIsGround;
 
-	private bool isGrounded;
+    public Rigidbody2D MyRigidbody { get; set; }
 
-	private bool jump;
-	[SerializeField]
+    public bool Attack { get; set; }
+    public bool OnGround { get; set; }
+
+
+    [SerializeField]
 	private float jumpForce;
 	// Use this for initialization
 	void Start () {
 
 		facingRight = true;
-		myRigidbody = GetComponent<Rigidbody2D> ();
+        MyRigidbody = GetComponent<Rigidbody2D> ();
 		myAnimator = GetComponent<Animator> ();
 
 	}
@@ -41,40 +55,29 @@ public class PlayerSpace : MonoBehaviour {
 	void FixedUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
 
-		isGrounded = IsGrounded ();
+		OnGround = IsGrounded ();
 
 		HandleMovement (horizontal);
 		Flip (horizontal);
-		HandleAttacks ();
-		resetValues ();
 	}
 
-	private void HandleMovement(float Horizontal){
-		if(!this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
-			myRigidbody.velocity = new Vector2 (Horizontal * movementSpeed, myRigidbody.velocity.y);
-		}
-		if (isGrounded && jump) {
-			isGrounded = false;
-			myRigidbody.AddForce (new Vector2 (0, jumpForce));
-		}
+	private void HandleMovement(float horizontal){
+		if(MyRigidbody.velocity.y < 0)
+        {
+            myAnimator.SetBool("land", true);
+        }
+        if (!Attack)
+        {
+            MyRigidbody.velocity = new Vector2(horizontal * movementSpeed, MyRigidbody.velocity.y);
+        }
 
-		myAnimator.SetFloat ("speed", Mathf.Abs(Horizontal));
-		print (Horizontal);
+        myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
 	}
 
-	private void HandleAttacks(){
-		if (attack && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")) {
-			myAnimator.SetTrigger ("attack");
-			myRigidbody.velocity = Vector2.zero;
-		}
-	}
 
 	private void HandleInput(){
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			jump = true;
-		}
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
-			attack = true;
+            myAnimator.SetTrigger("attack");
 		}
 	}
 
@@ -90,14 +93,8 @@ public class PlayerSpace : MonoBehaviour {
 		}
 	}
 
-
-	private void resetValues(){
-		attack = false;
-		jump = false;
-
-	}
 	private bool IsGrounded(){
-		if(myRigidbody.velocity.y <= 0){
+		if(MyRigidbody.velocity.y <= 0){
 			foreach (Transform point in groundPoints){
 				Collider2D[] colliders = Physics2D.OverlapCircleAll (point.position, groundRadius, whatIsGround);
 
@@ -110,7 +107,5 @@ public class PlayerSpace : MonoBehaviour {
 		}
 		return false;
 	}
-
-
 
 }

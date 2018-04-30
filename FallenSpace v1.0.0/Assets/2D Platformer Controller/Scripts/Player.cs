@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
     private bool wallSliding;
     private int wallDirX;
 
+    public static object Instance { get; internal set; }
+    public bool Attack { get; internal set; }
+    public object MyRigibody { get; internal set; }
+
     private void Start()
     {
         controller = GetComponent<Controller2D>();
