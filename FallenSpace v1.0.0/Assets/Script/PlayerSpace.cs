@@ -59,7 +59,7 @@ public class PlayerSpace : MonoBehaviour {
 		}
 
 		myAnimator.SetFloat ("speed", Mathf.Abs(Horizontal));
-		print (Horizontal);
+		//print (Horizontal);
 	}
 
 	private void HandleAttacks(){

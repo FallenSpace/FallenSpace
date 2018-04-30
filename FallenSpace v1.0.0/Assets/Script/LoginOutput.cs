@@ -39,6 +39,8 @@ public class LoginOutput : MonoBehaviour {
 		Text_get_exp.text = jsonuser.exp;
 		Text_get_hp.text = jsonuser.hp;
 
+		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
+		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
 		PlayerPrefs.SetString ("hp", jsonuser.hp); //ส่งค่า
 	}
 }
