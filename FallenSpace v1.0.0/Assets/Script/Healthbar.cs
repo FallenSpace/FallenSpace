@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour {
-	
+
+	public Animator myAnimator;
+	public Rigidbody2D myRigidbody;
 
 	Image HealthBar;
 	//float maxHealth = 100f;
@@ -43,16 +45,24 @@ public class Healthbar : MonoBehaviour {
 
 		Text_get_hp.text = health.ToString();
 
+		//Get speedStart from Player.cs
+		float moveSpeedStart = PlayerPrefs.GetFloat ("moveSpeedStart");
+		PlayerPrefs.SetFloat ("die_nowalk", moveSpeedStart); //speed player form Player.cs
+
 		if(health <= 0){
 			
-			Destroy (spaceMan, 5);
+			//Destroy (spaceMan, 5);
+
+			myAnimator.SetBool ("death", true);
+			myRigidbody.velocity = Vector2.zero;
+
+			PlayerPrefs.SetFloat ("die_nowalk", 0f); //speed player in if
+
+			Debug.Log ("death");	
 
 			//monter die
 			Text_get_exp_i = Text_get_exp_i + 50; // exp + 50
 			ExpPlus (id_user ,Text_get_exp_i);
-
-			//
-
 
 		}
 	}

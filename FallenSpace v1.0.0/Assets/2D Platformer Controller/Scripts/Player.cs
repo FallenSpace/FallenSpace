@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float timeToJumpApex = .4f;
     private float accelerationTimeAirborne = .2f;
     private float accelerationTimeGrounded = .1f;
-    private float moveSpeed = 6f;
+    private float moveSpeed = 10f;
 
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
@@ -39,12 +39,19 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+
+		//To Healthbar speedPlayer
+		PlayerPrefs.SetFloat("moveSpeedStart", moveSpeed);
+		//
     }
 
     private void Update()
     {
         CalculateVelocity();
         HandleWallSliding();
+
+		Death_nowalk ();
+
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
@@ -139,4 +146,9 @@ public class Player : MonoBehaviour
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below ? accelerationTimeGrounded : accelerationTimeAirborne));
         velocity.y += gravity * Time.deltaTime;
     }
+		
+	private void Death_nowalk (){
+		float die_nowalk = PlayerPrefs.GetFloat ("die_nowalk");
+		moveSpeed = die_nowalk;
+	}
 }

@@ -12,17 +12,22 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        player.SetDirectionalInput(directionalInput);
+		float die_nowalk = PlayerPrefs.GetFloat ("die_nowalk");
+		if (die_nowalk == 0f) {
+			
+		} else {
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            player.OnJumpInputDown();
-        }
 
-        if (Input.GetButtonUp("Jump"))
-        {
-            player.OnJumpInputUp();
-        }
+			Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+			player.SetDirectionalInput (directionalInput);
+
+			if (Input.GetButtonDown ("Jump")) {
+				player.OnJumpInputDown ();
+			}
+
+			if (Input.GetButtonUp ("Jump")) {
+				player.OnJumpInputUp ();
+			}
+		}
     }
 }

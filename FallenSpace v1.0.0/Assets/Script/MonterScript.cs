@@ -15,7 +15,7 @@ public class MonterScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Healthbar.health -= 10f/2;
+		Healthbar.health -= 100f/2;
 	}
 
 }
