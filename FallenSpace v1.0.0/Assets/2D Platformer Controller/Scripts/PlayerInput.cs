@@ -10,8 +10,7 @@ public class PlayerInput : MonoBehaviour
         player = GetComponent<Player>();
     }
 
-    private void Update()
-    {
+    private void Update() {
 		float die_nowalk = PlayerPrefs.GetFloat ("die_nowalk");
 		if (die_nowalk == 0f) {
 			
