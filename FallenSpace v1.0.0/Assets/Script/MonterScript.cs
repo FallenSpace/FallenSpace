@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonterScript : MonoBehaviour {
@@ -9,6 +8,8 @@ public class MonterScript : MonoBehaviour {
 
 	public int curHealth;
 	public Animator anim;
+    public Animator spaceMan;
+    public GameObject Monster;
 
 	void Awake(){
 		anim = gameObject.GetComponent<Animator> ();
@@ -16,9 +17,7 @@ public class MonterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(curHealth <= 0){
-			Debug.Log("dieee");
-		}
+		
 	}
 	
 	// Update is called once per frame
@@ -30,18 +29,29 @@ public class MonterScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		Debug.Log (col.GetInstanceID());
-		if (col.GetInstanceID () == -50742) {
+		if (col.CompareTag("Player")) {
 			Healthbar.health -= 100f / 2;
-		} else if (col.GetInstanceID () == -64132) {
+            spaceMan.SetTrigger("gotHit");
+        } else if (col.CompareTag("sword")) {
 			curHealth -= 5;
 			Debug.Log ("hit");
 			anim.SetTrigger ("hit");
-		} else if (curHealth <= 0) {
-			Debug.Log ("Monster Die");
-			anim.SetBool ("dead", true);
 		} 
+        if (curHealth <= 0) {
+			Debug.Log ("Monster Die");
+			anim.SetTrigger("dead");
+            StartCoroutine(Example());
+        }
+    }
 
-	}
+    void DesMonster() {
+        Destroy(Monster);
+    }
 
+    IEnumerator Example()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(Monster);
+    }
 }
 	
