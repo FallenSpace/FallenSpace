@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonterScript : MonoBehaviour {
 
+	string MontersURL = "http://www.bunlab.net/sharp/game/monters.php";
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,3 +21,4 @@ public class MonterScript : MonoBehaviour {
 	}
 
 }
+	
