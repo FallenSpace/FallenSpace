@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonterScript : MonoBehaviour {
 
 	string MontersURL = "http://www.bunlab.net/sharp/game/monters.php";
-	public float speedMonter = 1f;
+	public float speedMonter = 0.001f;
 
 	// Use this for initialization
 	void Start () {
