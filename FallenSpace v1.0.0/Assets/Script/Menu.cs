@@ -33,6 +33,8 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void TaskOnClickState1 () {
+		PlayerValue.sumscorePlayer = 0;
+		PlayerValue.scorePlayer = 0;
 		SceneManager.LoadScene ("mapTest");
 	}
 

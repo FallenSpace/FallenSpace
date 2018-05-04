@@ -26,6 +26,7 @@ public class LoginOutput : MonoBehaviour {
 		Debug.Log (jsonuser.id);
 		Debug.Log (jsonuser.username);
 		Debug.Log (jsonuser.hp);
+		Debug.Log (jsonuser.score);
 
 
 		Text_get_username.text = jsonuser.username;
@@ -42,7 +43,7 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
 		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
 		PlayerPrefs.SetString ("hp", jsonuser.hp); //ส่งค่า
-
+		PlayerPrefs.SetString ("score", jsonuser.score); //ส่งค่า
 
 	}
 }

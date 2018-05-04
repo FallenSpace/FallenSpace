@@ -16,6 +16,7 @@ public class MonterScript : MonoBehaviour {
 	//string MontersJsonData = "";
 	int scoreMonter = 50;
 	int expMonter = 50;
+	public static int scoreState = 100;
 
 
 	void Awake(){
@@ -44,9 +45,10 @@ public class MonterScript : MonoBehaviour {
 			anim.SetTrigger("dead");
 
 			PlayerValue.scorePlayer += scoreMonter;
-            StartCoroutine(Example());
-
-			Debug.Log (PlayerValue.scorePlayer);
+			PlayerValue.expPlayer += expMonter;
+			StartCoroutine(Example());
+			increaseHealth();
+			Debug.Log (" SCORE "+PlayerValue.scorePlayer+" EXP "+PlayerValue.expPlayer);
         }
 
     }
@@ -58,6 +60,11 @@ public class MonterScript : MonoBehaviour {
         yield return new WaitForSeconds(1);
         Destroy(Monster);
     }
+		
+	public void increaseHealth()
+	{
+		Healthbar.health += 20;
+	}
 
 	//SHARP
 	void Start () {
