@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Healthbar : MonoBehaviour {
 
@@ -41,7 +42,7 @@ public class Healthbar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		HealthBar.fillAmount = health / Text_get_hp_f;
-		//Debug.Log (health);
+		Debug.Log (health);
 
 		Text_get_hp.text = health.ToString();
 
@@ -58,7 +59,8 @@ public class Healthbar : MonoBehaviour {
 
 			PlayerPrefs.SetFloat ("die_nowalk", 0f); //speed player in if
 
-			Debug.Log ("death");	
+			Debug.Log ("death");
+			SceneManager.LoadScene ("scoreSummaryLose");
 
 			//monter die
 			Text_get_exp_i = Text_get_exp_i + 50; // exp + 50
