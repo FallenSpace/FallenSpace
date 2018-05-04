@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerValue : MonoBehaviour {
 
-	int expPlayer = 0 ;
-	int scorePlayer = 0;
-	int finishgame = 0;
-
+	public static int expPlayer = 0 ;
+	public static int scorePlayer = 0;
+	public static int sumscorePlayer;
 	void Start () {
-		int scoreMonter = PlayerPrefs.GetInt ("scoreMonter");
+
 	}
 
 	void Update () {
+		//scorePlayer = scorePlayer + scoreMonter;
+		//Debug.Log (scorePlayer);
+		//PlayerPrefs.SetInt ("scorePlayer", scorePlayer);
+
+		sumscorePlayer = scorePlayer;
 
 	}
 }

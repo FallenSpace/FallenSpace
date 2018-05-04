@@ -15,6 +15,7 @@ public class MonterScript : MonoBehaviour {
     public GameObject Monster;
 	//string MontersJsonData = "";
 	int scoreMonter = 50;
+	int expMonter = 50;
 
 
 	void Awake(){
@@ -41,8 +42,11 @@ public class MonterScript : MonoBehaviour {
         if (curHealth <= 0) {
 			Debug.Log ("Monster Die");
 			anim.SetTrigger("dead");
-			PlayerPrefs.SetInt("scoreMonter", scoreMonter);
+
+			PlayerValue.scorePlayer += scoreMonter;
             StartCoroutine(Example());
+
+			Debug.Log (PlayerValue.scorePlayer);
         }
 
     }
