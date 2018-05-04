@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void TaskOnClickState1 () {
-		SceneManager.LoadScene ("map1");
+		SceneManager.LoadScene ("mapTest");
 	}
 
 	public void TaskOnClickToMenu () {

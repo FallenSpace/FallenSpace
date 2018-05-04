@@ -21,11 +21,11 @@ public class LoginCheck : MonoBehaviour {
 	string createUserURL = "http://www.bunlab.net/sharp/game/CheckLogin.php";
 
 
+
 	void Start () {
-		
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -73,6 +73,7 @@ public class LoginCheck : MonoBehaviour {
 
 		WWW www = new WWW(createUserURL, form);
 		StartCoroutine(Login(www));
+
 	}
 
 	private IEnumerator Login(WWW _w) {
@@ -94,12 +95,6 @@ public class LoginCheck : MonoBehaviour {
 			SceneManager.LoadScene ("Play"); //เปลี่ยนซีน
 		}
 	}
-
-
-
-
-
-
 
 
 }

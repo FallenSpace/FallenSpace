@@ -42,6 +42,8 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
 		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
 		PlayerPrefs.SetString ("hp", jsonuser.hp); //ส่งค่า
+
+
 	}
 }
 	
@@ -59,4 +61,6 @@ public class Creature {
 	public string exp;
 	public string hp;
 }
+
+
 
