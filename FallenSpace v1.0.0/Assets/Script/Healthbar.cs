@@ -26,6 +26,7 @@ public class Healthbar : MonoBehaviour {
 
 	void Start () {
 		InvokeRepeating("decreaseEverySeconds", 1.0f, 1.0f); // kiw decrease Health every 1 seconds
+
 		//monter die
 		string exp = PlayerPrefs.GetString ("exp");
 		Text_get_exp_i = int.Parse(exp);

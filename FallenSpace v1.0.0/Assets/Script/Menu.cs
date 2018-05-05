@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour {
 	public Button Login_But;
 	public Button Play_But;
 	public Button State1_But;
+	public Button Exit_But;
 	// Use this for initialization
 	void Start () {
 		
@@ -42,4 +43,7 @@ public class Menu : MonoBehaviour {
 		SceneManager.LoadScene ("Main");
 	}
 
+	public void Exit() {
+		Application.Quit();
+	}
 }
