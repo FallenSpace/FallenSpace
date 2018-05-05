@@ -13,7 +13,7 @@ public class MonterScript : MonoBehaviour {
 	public Animator anim;
     public Animator spaceMan;
     public GameObject Monster;
-	//string MontersJsonData = "";
+	string MontersJsonData = "";
 	int scoreMonter = 50;
 	int expMonter = 50;
 	public static int scoreState = 100;
