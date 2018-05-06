@@ -45,10 +45,13 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetString ("hp", jsonuser.hp); //ส่งค่า
 		PlayerPrefs.SetString ("score", jsonuser.score); //ส่งค่า
 
+		PlayerPrefs.SetString("username", jsonuser.username);
+		PlayerPrefs.SetString ("password", jsonuser.password);
+
 	}
 }
 	
-[System.Serializable]
+//[System.Serializable]
 public class Creature {
 	public int id;
 	public string username;

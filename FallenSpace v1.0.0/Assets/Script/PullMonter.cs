@@ -1,74 +1,64 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-//using Newtonsoft.Json;
 
-public class PullMonter : MonoBehaviour {
-	
-	string MontersJson = "";
-	string MontersURL = "http://www.bunlab.net/sharp/game/Monters.php";
+public class PullMonter : MonoBehaviour
+{
 
-	void Start () {
-		WWWForm form = new WWWForm();
-		WWW www = new WWW(MontersURL, form);
-		StartCoroutine(MontersWWW(www));
-		StartCoroutine(Example());
+	public static string mons_name;
+	public static int mons_money;
+	public static int mons_hp;
+	public static int mons_exp;
+	public static int mons_score;
+	public static int mons_attack;
+
+	void Start ()
+	{
+		StartCoroutine(ReadJsonData());
 	}
 
-	void Update () {}
+	IEnumerator ReadJsonData()
+	{
+		string url = "http://www.bunlab.net/sharp/game/Monters.php";
+		WWW www = new WWW(url);
+		yield return www;
 
-	IEnumerator Example() {
-		
-		yield return new WaitForSeconds(2);
-		string MontersJsonData = PlayerPrefs.GetString ("MontersJson");
-
-		Debug.Log ("JSON MONTER : "+MontersJsonData);
-		Creature_Mon jsonMonters = JsonUtility.FromJson<Creature_Mon> (MontersJsonData);
-		//Creature_Mon jsonMonters = Newtonsoft.Json.JsonConvert.DeserializeObject<Creature_Mon> (MontersJsonData);
-
-		Debug.Log (jsonMonters.id_mon);
-		Debug.Log (jsonMonters.name_mon);
-		//Debug.Log (jsonMonters.name_mon+" ID : "+jsonMonters.id_mon+" EXP : "+jsonMonters.exp_mon);
-	}
-
-		
-
-	private IEnumerator MontersWWW(WWW www_MontersJson) {
-		yield return www_MontersJson;
-		//if (www_MontersJson.error == null){
-		if (string.IsNullOrEmpty(www_MontersJson.error)){
-				MontersJson = www_MontersJson.text;
-		}else {
-			MontersJson = "Error" + www_MontersJson.error;
+		if (!string.IsNullOrEmpty(www.error))
+		{
+			print("Error downloading: " + www.error);
 		}
-		PlayerPrefs.SetString ("MontersJson", MontersJson); //ส่งค่า
+		else
+		{
+			JsonViewModel mons = JsonUtility.FromJson<JsonViewModel>(www.text);
+			Debug.Log(mons.monters_id + " " + mons.monters_name + " " + mons.monters_money);    
 
+			mons_name = mons.monters_name;
+			mons_money = mons.monters_money;
+			mons_hp = mons.monters_hp;
+			mons_exp = mons.monters_exp;
+			mons_score = mons.monters_score;
+			mons_attack = mons.monters_attack;
 
+			PlayerPrefs.SetString("mons_name", mons_name);
+			PlayerPrefs.SetInt ("mons_money", mons_money);
+			PlayerPrefs.SetInt ("mons_hp", mons_hp);
+			PlayerPrefs.SetInt ("mons_exp", mons_exp);
+			PlayerPrefs.SetInt ("mons_score", mons_score);
+			PlayerPrefs.SetInt ("mons_attack", mons_attack);
+
+		}
 	}
-
-
-
 }
 
-[System.Serializable]
-public class Creature_Mon {
 
-	public string id_mon;
-	public string name_mon;
-	public string money_mon;
-	public string exp_mon;
-	public string hp_mon;
-	public string score_mon;
-	public string attack_mon;
-	/*
-	public int monters_id { get; set; }
-	public string monters_name { get; set; }
-	public string monters_money { get; set; }
-	public string monters_exp { get; set; }
-	public string monters_hp { get; set; }
-	public string monters_score { get; set; }
-	public string monters_attack { get; set; }
-	*/
+public class JsonViewModel
+{
+	public int monters_id;
+	public string monters_name;
+	public int  monters_money;
+	public int monters_exp;
+	public int monters_hp;
+	public int monters_score;
+	public int monters_attack;
 }

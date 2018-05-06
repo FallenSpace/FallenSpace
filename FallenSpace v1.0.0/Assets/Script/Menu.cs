@@ -36,6 +36,7 @@ public class Menu : MonoBehaviour {
 	public void TaskOnClickState1 () {
 		PlayerValue.sumscorePlayer = 0;
 		PlayerValue.scorePlayer = 0;
+		PlayerValue.expPlayer = 0; //reset exp player on try again
 		SceneManager.LoadScene ("mapTest");
 	}
 
