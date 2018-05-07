@@ -25,6 +25,8 @@ public class MonterScript : MonoBehaviour {
 	int mons_score;
 	int mons_attack;
 
+	int attack_level;
+
 	void Start () {
 
 		//PUllMonter Script
@@ -36,6 +38,10 @@ public class MonterScript : MonoBehaviour {
 		mons_attack = PlayerPrefs.GetInt ("mons_attack");
 		//
 
+		//Pull Player Level in Login_output Script
+
+		attack_level = PlayerPrefs.GetInt ("attack_level");
+		//
 	}
 
 
@@ -58,7 +64,7 @@ public class MonterScript : MonoBehaviour {
 			Healthbar.health -= mons_attack;
             spaceMan.SetTrigger("gotHit");
         } else if (col.CompareTag("sword")) {
-			mons_hp -= 75;
+			mons_hp -= attack_level;
 			Debug.Log ("HPmon : "+mons_hp);
 			Debug.Log ("hit");
 			anim.SetTrigger ("hit");

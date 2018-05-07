@@ -39,11 +39,10 @@ public class Healthbar : MonoBehaviour {
 		//health = maxHealth;
 		health = Text_get_hp_f;
 	}
-
 	// Update is called once per frame
 	void Update () {
 		HealthBar.fillAmount = health / Text_get_hp_f;
-		//Debug.Log (health+" / "+Text_get_hp_f); show เลือด
+		Debug.Log (health+" / "+Text_get_hp_f); //show เลือด
 
 		Text_get_hp.text = health.ToString();
 
