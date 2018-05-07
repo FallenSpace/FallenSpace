@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoginOutput : MonoBehaviour {
 
@@ -14,12 +15,20 @@ public class LoginOutput : MonoBehaviour {
 	public Text Text_get_state;
 	public Text Text_get_level;
 	public Text Text_get_exp;
-	public Text Text_get_hp;
+	public Text Text_get_hp_level;
+	public Text Text_get_attack_level;
+	public Text Text_get_exp_level;
 
 
 	// Use this for initialization
 	void Start () {
 		string user_name = PlayerPrefs.GetString ("user_name");
+
+		//CHECK CONNECT TO SERVER
+		if(user_name == "ErrorCannot resolve destination host"){
+			SceneManager.LoadScene ("Connect_error"); //เปลี่ยนซีน
+		}
+		//
 
 		Debug.Log ("LOGINOUT"+user_name);
 		Creature jsonuser = JsonUtility.FromJson<Creature> (user_name);
@@ -27,7 +36,6 @@ public class LoginOutput : MonoBehaviour {
 		Debug.Log (jsonuser.username);
 		Debug.Log (jsonuser.hp);
 		Debug.Log (jsonuser.score);
-
 
 		Text_get_username.text = jsonuser.username;
 		Text_get_email.text = jsonuser.email;
@@ -38,11 +46,13 @@ public class LoginOutput : MonoBehaviour {
 		Text_get_state.text = jsonuser.state;
 		Text_get_level.text = jsonuser.level;
 		Text_get_exp.text = jsonuser.exp;
-		Text_get_hp.text = jsonuser.hp;
+		Text_get_hp_level.text = jsonuser.hp_level; // ดึงจาก level
+		Text_get_attack_level.text = jsonuser.attack_level; // ดึงจาก level
+		Text_get_exp_level.text = jsonuser.exp_level; // ดึงจาก level
 
 		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
 		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
-		PlayerPrefs.SetString ("hp", jsonuser.hp); //ส่งค่า
+		PlayerPrefs.SetString ("hp", jsonuser.hp_level); //ส่งค่า
 		PlayerPrefs.SetString ("score", jsonuser.score); //ส่งค่า
 
 		PlayerPrefs.SetString("username", jsonuser.username);
@@ -63,7 +73,9 @@ public class Creature {
 	public string state;
 	public string level;
 	public string exp;
-	public string hp;
+	public string hp_level;
+	public string attack_level;
+	public string exp_level;
 }
 
 
