@@ -32,10 +32,7 @@ public class LoginOutput : MonoBehaviour {
 
 		Debug.Log ("LOGINOUT"+user_name);
 		Creature jsonuser = JsonUtility.FromJson<Creature> (user_name);
-		Debug.Log (jsonuser.id);
-		Debug.Log (jsonuser.username);
-		Debug.Log (jsonuser.hp_level);
-		Debug.Log (jsonuser.score);
+		Debug.Log ("User ID "+jsonuser.id+"U_NAME "+jsonuser.username+"U_hp "+jsonuser.hp_level+"U_SCORE "+jsonuser.score);
 
 		Text_get_username.text = jsonuser.username;
 		Text_get_email.text = jsonuser.email;
@@ -59,7 +56,7 @@ public class LoginOutput : MonoBehaviour {
 
 		PlayerPrefs.SetString ("hp", jsonuser.hp_level); //ส่งค่า
 		PlayerPrefs.SetInt ("attack_level", jsonuser.attack_level); //ส่งค่า
-		PlayerPrefs.SetInt ("exp_level", jsonuser.attack_level); //ส่งค่า
+		PlayerPrefs.SetInt ("exp_level", jsonuser.exp_level); //ส่งค่า
 	}
 }
 	
