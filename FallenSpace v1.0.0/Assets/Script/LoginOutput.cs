@@ -34,7 +34,7 @@ public class LoginOutput : MonoBehaviour {
 		Creature jsonuser = JsonUtility.FromJson<Creature> (user_name);
 		Debug.Log (jsonuser.id);
 		Debug.Log (jsonuser.username);
-		Debug.Log (jsonuser.hp);
+		Debug.Log (jsonuser.hp_level);
 		Debug.Log (jsonuser.score);
 
 		Text_get_username.text = jsonuser.username;
