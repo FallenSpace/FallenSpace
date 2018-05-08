@@ -16,7 +16,7 @@ public class MonterScript : MonoBehaviour {
 	string MontersJsonData = "";
 	//int scoreMonter = 50;
 	//int expMonter = 50;
-	public static int scoreState = 100;
+	//public static int scoreState = 100;
 
 	string mons_name;
 	int mons_money;
@@ -42,6 +42,7 @@ public class MonterScript : MonoBehaviour {
 
 		attack_level = PlayerPrefs.GetInt ("attack_level");
 		//
+
 	}
 
 

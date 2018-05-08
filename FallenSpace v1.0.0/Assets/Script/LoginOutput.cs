@@ -44,7 +44,7 @@ public class LoginOutput : MonoBehaviour {
 		Text_get_email.text = jsonuser.email;
 		Text_get_password.text = jsonuser.password;
 		Text_get_name.text = jsonuser.name;
-		Text_get_money.text = jsonuser.money;
+		Text_get_money.text = jsonuser.money.ToString();
 		Text_get_score.text = jsonuser.score;
 		Text_get_state.text = jsonuser.state;
 		Text_get_level.text = jsonuser.level;
@@ -63,6 +63,7 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
 		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
 		PlayerPrefs.SetString ("score", jsonuser.score); //ส่งค่า
+		PlayerPrefs.SetString ("state", jsonuser.state); //ส่งค่า
 
 		PlayerPrefs.SetString("username", jsonuser.username);
 		PlayerPrefs.SetString ("password", jsonuser.password);
@@ -70,6 +71,14 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetString ("hp", jsonuser.hp_level); //ส่งค่า
 		PlayerPrefs.SetInt ("attack_level", jsonuser.attack_level); //ส่งค่า
 		PlayerPrefs.SetInt ("exp_level", jsonuser.exp_level); //ส่งค่า
+
+		PlayerPrefs.SetInt ("id_state", jsonuser.id_state); //ส่งค่า
+		PlayerPrefs.SetInt ("name_state", jsonuser.name_state); //ส่งค่า
+		PlayerPrefs.SetInt ("score_state", jsonuser.score_state); //ส่งค่า
+		PlayerPrefs.SetInt ("exp_state", jsonuser.exp_state); //ส่งค่า
+
+		PlayerPrefs.SetInt ("money_user", jsonuser.money); //ส่งค่า
+		PlayerPrefs.SetInt ("money_item", jsonuser.money_item); //ส่งค่า
 	}
 }
 	
@@ -80,7 +89,7 @@ public class Creature {
 	public string email;
 	public string password;
 	public string name;
-	public string money;
+	public int money;
 	public string score;
 	public string state;
 	public string level;
@@ -95,6 +104,12 @@ public class Creature {
 	public int type_item;
 	public int money_item;
 	public int value_item;
+
+	public int id_state;
+	public int name_state;
+	public int score_state;
+	public int exp_state;
+
 }
 
 

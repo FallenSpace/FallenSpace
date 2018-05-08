@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerValue : MonoBehaviour {
 
-	public Text score;
+
+	// SHOW SCORE IN scoresumary WIN LOSE
+	public Text score; //SCORE
+
+
+	/// /// // /// // /// // /// // /// // /// //
+
 
 	public static int expPlayer = 0 ;
+	int expstatePlayer = 0;//
+	int scorestatePlayer = 0; //
 	public static int scorePlayer = 0;
 	public static int moneyPlayer = 0; // new money
 	public static int sumscorePlayer,sumexpPlayer,summoneyPlayer;
-	int UserId,UserScore,UserExp,UserMoney; // old
+	int UserId,UserScore,UserExp,UserMoney; // old //in DB
 	string UserUsername,UserPassword,userpullText;
 
 
@@ -26,6 +34,13 @@ public class PlayerValue : MonoBehaviour {
 		//UserExp = PlayerPrefs.GetInt ("exp");
 		UserPassword = PlayerPrefs.GetString ("password");
 		UserUsername = PlayerPrefs.GetString ("username");
+
+		//Pull Player State
+		scorestatePlayer = PlayerPrefs.GetInt ("score_state"); //ส่งค่า
+		expstatePlayer = PlayerPrefs.GetInt ("exp_state"); //ส่งค่า
+
+		//
+
 		//ดึงข้อมูลสกอ ล่าสุด 
 		WWWForm form = new WWWForm();
 		form.AddField("usernamePost", UserUsername);
@@ -86,13 +101,12 @@ public class PlayerValue : MonoBehaviour {
 		/////////////////////////////////////////////////////////////
 
 		//StartCoroutine(Delay());
-		int scoreState = MonterScript.scoreState; 
-		sumscorePlayer = scorePlayer+scoreState;
-		score.text = sumscorePlayer.ToString(); //SHOW SCORE เก่า
+		sumscorePlayer = scorePlayer+scorestatePlayer;
+		score.text = sumscorePlayer.ToString(); //SHOW SCORE เก่า 
 
-		sumexpPlayer = expPlayer + UserExp;
+		sumexpPlayer = expPlayer + UserExp + expstatePlayer; //exp ปัจจุบัน + exp DB + exp State 
 
-		summoneyPlayer = moneyPlayer + UserMoney;
+		summoneyPlayer = moneyPlayer + UserMoney; // money ปัจจุบัน + money DB
 			
 		Debug.Log ("EXP Player  "+sumexpPlayer);
 
