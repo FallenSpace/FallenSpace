@@ -33,8 +33,8 @@ public class Healthbar : MonoBehaviour {
 		id_user = PlayerPrefs.GetInt ("id_user");
 		//
 
-		string hp = PlayerPrefs.GetString ("hp");
-		Text_get_hp_f = float.Parse(hp);
+		int hp = PlayerPrefs.GetInt ("hp");
+		Text_get_hp_f = hp;
 		HealthBar = GetComponent<Image> ();
 		//health = maxHealth;
 		health = Text_get_hp_f;

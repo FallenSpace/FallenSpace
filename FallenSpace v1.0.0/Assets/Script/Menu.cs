@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour {
 	public Button Play_But;
 	public Button State1_But;
 	public Button Exit_But;
+	public Button Shop_But;
 	// Use this for initialization
 	void Start () {
 		
@@ -42,6 +43,10 @@ public class Menu : MonoBehaviour {
 
 	public void TaskOnClickToMenu () {
 		SceneManager.LoadScene ("Main");
+	}
+
+	public void TaskOnClickToShop () {
+		SceneManager.LoadScene ("SpaceShop");
 	}
 
 	public void Exit() {
