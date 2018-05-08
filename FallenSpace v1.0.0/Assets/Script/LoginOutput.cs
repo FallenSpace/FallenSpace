@@ -19,6 +19,12 @@ public class LoginOutput : MonoBehaviour {
 	public Text Text_get_attack_level;
 	public Text Text_get_exp_level;
 
+	public Text Text_get_id_item;
+	public Text Text_get_name_item;
+	public Text Text_get_type_item;
+	public Text Text_get_money_item;
+	public Text Text_get_value_item;
+
 
 	// Use this for initialization
 	void Start () {
@@ -43,9 +49,16 @@ public class LoginOutput : MonoBehaviour {
 		Text_get_state.text = jsonuser.state;
 		Text_get_level.text = jsonuser.level;
 		Text_get_exp.text = jsonuser.exp;
+
 		Text_get_hp_level.text = jsonuser.hp_level; // ดึงจาก level
 		Text_get_attack_level.text = jsonuser.attack_level.ToString(); // ดึงจาก level
 		Text_get_exp_level.text = jsonuser.exp_level.ToString(); // ดึงจาก level
+
+		Text_get_id_item.text = jsonuser.id_item.ToString(); //ดึงจาก item
+		Text_get_name_item.text = jsonuser.name_item.ToString(); //ดึงจาก item
+		Text_get_type_item.text = jsonuser.type_item.ToString(); //ดึงจาก item
+		Text_get_money_item.text = jsonuser.money_item.ToString(); //ดึงจาก item
+		Text_get_value_item.text = jsonuser.value_item.ToString(); //ดึงจาก item
 
 		PlayerPrefs.SetInt ("id_user", jsonuser.id); //ส่งค่า
 		PlayerPrefs.SetString ("exp", jsonuser.exp); //ส่งค่า
@@ -72,9 +85,16 @@ public class Creature {
 	public string state;
 	public string level;
 	public string exp;
+
 	public string hp_level;
 	public int attack_level;
 	public int exp_level;
+
+	public int id_item;
+	public int name_item;
+	public int type_item;
+	public int money_item;
+	public int value_item;
 }
 
 
