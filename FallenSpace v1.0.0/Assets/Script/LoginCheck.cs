@@ -17,10 +17,7 @@ public class LoginCheck : MonoBehaviour {
 	string MenuText = "";
 	public Text Text_get;
 
-
 	string createUserURL = "http://www.bunlab.net/sharp/game/CheckLogin.php";
-
-
 
 	void Start () {
 
