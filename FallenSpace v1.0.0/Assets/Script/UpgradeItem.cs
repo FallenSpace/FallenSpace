@@ -24,7 +24,7 @@ public class UpgradeItem : MonoBehaviour {
 	public void TaskOnClickUpGrade() { // คลิกปุ่ม
 
 		if (money_user < money_item) {
-			message.text = "You have no money";
+			message.text = "You don't have money";
 		} else {
 			summoney_user = money_user - money_item;
 			message.text = "Success";
