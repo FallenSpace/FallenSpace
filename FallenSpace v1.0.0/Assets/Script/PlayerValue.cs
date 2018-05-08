@@ -9,8 +9,9 @@ public class PlayerValue : MonoBehaviour {
 
 	public static int expPlayer = 0 ;
 	public static int scorePlayer = 0;
-	public static int sumscorePlayer,sumexpPlayer;
-	int UserId,UserScore,UserExp;
+	public static int moneyPlayer = 0; // new money
+	public static int sumscorePlayer,sumexpPlayer,summoneyPlayer;
+	int UserId,UserScore,UserExp,UserMoney; // old
 	string UserUsername,UserPassword,userpullText;
 
 
@@ -25,7 +26,6 @@ public class PlayerValue : MonoBehaviour {
 		//UserExp = PlayerPrefs.GetInt ("exp");
 		UserPassword = PlayerPrefs.GetString ("password");
 		UserUsername = PlayerPrefs.GetString ("username");
-
 		//ดึงข้อมูลสกอ ล่าสุด 
 		WWWForm form = new WWWForm();
 		form.AddField("usernamePost", UserUsername);
@@ -45,6 +45,7 @@ public class PlayerValue : MonoBehaviour {
 		form.AddField ("idPost", UserId);
 		form.AddField ("scorePost", sumscorePlayer);
 		form.AddField ("expPost", sumexpPlayer); // exp
+		form.AddField ("moneyPost", summoneyPlayer); //money
 		WWW www = new WWW (createURL, form);
 		Debug.Log ("high score"); 
 	}
@@ -54,6 +55,7 @@ public class PlayerValue : MonoBehaviour {
 		form.AddField ("idPost", UserId);
 		form.AddField ("scorePost", UserScore);
 		form.AddField ("expPost", sumexpPlayer); // exp
+		form.AddField ("moneyPost", summoneyPlayer); //money
 		WWW www = new WWW (createURL, form);
 		Debug.Log ("low score"); 
 	}
@@ -76,8 +78,10 @@ public class PlayerValue : MonoBehaviour {
 
 		Creature_PullUserAgain jsonuser_again = JsonUtility.FromJson<Creature_PullUserAgain> (userpullText);
 
+		//ค่าที่มาจาก dataBase
 		UserScore = jsonuser_again.score;
 		UserExp = jsonuser_again.exp;
+		UserMoney = jsonuser_again.money;
 
 		/////////////////////////////////////////////////////////////
 
@@ -87,6 +91,9 @@ public class PlayerValue : MonoBehaviour {
 		score.text = sumscorePlayer.ToString(); //SHOW SCORE เก่า
 
 		sumexpPlayer = expPlayer + UserExp;
+
+		summoneyPlayer = moneyPlayer + UserMoney;
+			
 		Debug.Log ("EXP Player  "+sumexpPlayer);
 
 		Debug.Log (sumscorePlayer+" > "+UserScore);
@@ -112,4 +119,5 @@ public class PlayerValue : MonoBehaviour {
 public class Creature_PullUserAgain {
 	public int score;
 	public int exp;
+	public int money;
 }

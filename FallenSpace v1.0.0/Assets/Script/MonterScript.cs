@@ -84,6 +84,7 @@ public class MonterScript : MonoBehaviour {
 		increaseHealth();
 		PlayerValue.scorePlayer += mons_score;
 		PlayerValue.expPlayer += mons_exp;
+		PlayerValue.moneyPlayer += mons_money;
 
 		Debug.Log (" SCORE "+PlayerValue.scorePlayer+" EXP "+PlayerValue.expPlayer);
     }
