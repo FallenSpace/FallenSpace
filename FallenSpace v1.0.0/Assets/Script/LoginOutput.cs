@@ -18,7 +18,8 @@ public class LoginOutput : MonoBehaviour {
 	public Text Text_get_hp_level;
 	public Text Text_get_attack_level;
 	public Text Text_get_exp_level;
-
+	public Text Text_get_levelItem_plus; // levelItem + 1
+	public Text Text_get_hp_plus; // hp + 100
 	public Text Text_get_id_item;
 	public Text Text_get_name_item;
 	public Text Text_get_type_item;
@@ -49,6 +50,9 @@ public class LoginOutput : MonoBehaviour {
 		Text_get_state.text = jsonuser.state;
 		Text_get_level.text = jsonuser.level;
 		Text_get_exp.text = jsonuser.exp;
+
+		Text_get_levelItem_plus.text = (jsonuser.id_item + 1).ToString(); // level item + 1
+		Text_get_hp_plus.text = (jsonuser.value_item + 100).ToString(); // hp item + 100
 
 		Text_get_hp_level.text = jsonuser.hp_level.ToString(); // ดึงจาก level
 		Text_get_attack_level.text = jsonuser.attack_level.ToString(); // ดึงจาก level
