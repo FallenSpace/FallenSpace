@@ -77,6 +77,7 @@ public class LoginOutput : MonoBehaviour {
 		PlayerPrefs.SetInt ("score_state", jsonuser.score_state); //ส่งค่า
 		PlayerPrefs.SetInt ("exp_state", jsonuser.exp_state); //ส่งค่า
 
+		PlayerPrefs.SetInt ("item_user", jsonuser.item);
 		PlayerPrefs.SetInt ("money_user", jsonuser.money); //ส่งค่า
 		PlayerPrefs.SetInt ("money_item", jsonuser.money_item); //ส่งค่า
 	}
@@ -94,6 +95,7 @@ public class Creature {
 	public string state;
 	public string level;
 	public string exp;
+	public int item;
 
 	public string hp_level;
 	public int attack_level;
